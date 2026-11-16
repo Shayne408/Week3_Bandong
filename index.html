@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wickd: hand-poured scented candles, dessert candles and wax melts, made for everyone who loves to relax.">
+  <title>Wickd | Hand-poured Candles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="header">
+    <a href="#home" class="header__logo" aria-label="Wickd home">WICKD</a>
+    <button class="header__toggle" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a class="nav__link" href="#home" data-page="home">Home</a>
+      <a class="nav__link" href="#products" data-page="products">Products</a>
+      <a class="nav__link" href="#cart" data-page="cart">Cart <span id="cart-count" class="nav__badge" aria-label="items in cart">0</span></a>
+      <a class="nav__link" href="#contact" data-page="contact">Contact</a>
+      <a class="nav__link" href="#help" data-page="help">Help</a>
+    </nav>
+    <form role="search" id="searchForm">
+      <label class="visually-hidden" for="search">Search candles by name, scent or type</label>
+      <input id="search" class="search" type="search" placeholder="Search candles…">
+    </form>
+  </header>
+
+  <main id="main">
+    <section id="home" class="page" aria-labelledby="home-h">
+      <video class="page__media page__media--video" id="homeVideo" autoplay muted loop playsinline aria-hidden="true"><source src="home.mp4" type="video/mp4"></video>
+      <div class="page__veil"></div>
+      <div class="hero">
+        <div class="panel hero__panel">
+          <p class="eyebrow">Candle collection</p>
+          <h1 class="hero__title" id="home-h">Welcome to Wickd</h1>
+          <p>Find a scent that feels like home. Our hand-poured scented candles, dessert candles and wax melts are made for everyone who loves to relax, with gentle scents and a site that is simple and comfortable to use.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#products">Shop candles</a>
+            <a class="btn btn--ghost" href="#contact">Visit the shop</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid feature">
+        <article class="panel"><h2 class="feature__title">Hand-poured</h2><p>Every candle and wax melt is poured in small batches with care.</p></article>
+        <article class="panel"><h2 class="feature__title">Made for everyone</h2><p>Mild, calming scents, plus unscented options for sensitive noses.</p></article>
+        <article class="panel"><h2 class="feature__title">Walk-ins welcome</h2><p>Drop by 281 Lower Cabinet Hill, open daily 10 am to 5 pm.</p></article>
+      </div>
+      <article class="panel feature"><h2 class="feature__title">About us</h2><p>Wickd is a small candle shop. We believe a quiet evening and a warm glow should be available to everyone, so our website and shop are made to be welcoming, clear and easy to enjoy.</p></article>
+    </section>
+
+    <section id="products" class="page" aria-labelledby="products-h">
+      <img class="page__media" id="prodBg" alt="" style="filter:blur(26px) brightness(1.05)">
+      <div class="page__veil"></div>
+      <h1 class="visually-hidden" id="products-h">Products</h1>
+      <div class="cats" role="group" aria-label="Product categories" id="cats"></div>
+      <div class="showcase">
+        <div class="panel" id="heroText">
+          <p class="eyebrow" id="eyebrow"></p>
+          <h2 class="showcase__title" id="title"></h2>
+          <p class="showcase__desc" id="desc"></p>
+          <p class="showcase__price" id="price"></p>
+          <div class="showcase__actions">
+            <button class="btn" id="add-btn">Add to cart</button>
+            <button class="showcase__save" id="save" aria-pressed="false" aria-label="Save to favorites"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z" fill="currentColor"/></svg></button>
+          </div>
+        </div>
+        <div class="showcase__media">
+          <img class="showcase__img" id="mainImg" alt="">
+          <div class="thumbs" id="thumbs" aria-label="Other products"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cart" class="page" aria-labelledby="cart-h">
+      <img class="page__media" src="contact.jpg" alt="">
+      <div class="page__veil"></div>
+      <h1 class="page__title" id="cart-h">Your cart</h1>
+      <div class="cols">
+        <div class="panel" id="cart-body"></div>
+        <aside class="panel" aria-labelledby="seller-h">
+          <h2 id="seller-h">Seller information</h2>
+          <p><strong>Wickd Candles</strong><br>281 Lower Cabinet Hill<br>Open 10 am to 5 pm, walk-ins welcome</p>
+          <p>Hand-poured in small batches. Choose pickup at the shop or delivery after you check out.</p>
+          <form class="form" id="detailsForm" hidden>
+            <h2>Your details</h2>
+            <label class="form__field">Full name<input class="form__input" name="name" required autocomplete="name"></label>
+            <label class="form__field">Mobile number<input class="form__input" name="phone" type="tel" required autocomplete="tel"></label>
+            <label class="form__field">Order type
+              <select class="form__input" name="type"><option>Pickup at the shop</option><option>Delivery</option></select></label>
+            <label class="form__field">Address or notes<textarea class="form__input" name="notes" rows="3" autocomplete="street-address"></textarea></label>
+            <button class="btn" type="submit">Submit details</button>
+          </form>
+          <p class="form__status" id="detailsOk" role="status" hidden>Thank you! Your details are filled in. We will contact you to confirm your order.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" class="page" aria-labelledby="contact-h">
+      <video class="page__media page__media--video" id="contactVideo" poster="contact.jpg" autoplay muted loop playsinline aria-hidden="true"><source src="contac.mp4" type="video/mp4"></video>
+      <div class="page__veil"></div>
+      <h1 class="page__title" id="contact-h">Come say hello</h1>
+      <div class="cols">
+        <div class="panel">
+          <h2>Visit Wickd</h2>
+          <p><strong>Address:</strong> 281 Lower Cabinet Hill</p>
+          <p><strong>Store hours:</strong> 10 am to 5 pm, walk-ins welcome</p>
+          <p>Smell every scent in person, take your time, and we will help you find your calm.</p>
+          <h2>Follow our glow</h2>
+          <ul class="socials">
+            <li><a class="socials__link" href="https://www.instagram.com/sh4yyynx?stkn=cHJ2Zno1bHk5NWRi&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a class="socials__link" href="https://www.facebook.com/share/1bYSkGaWh2/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a class="socials__link" href="https://www.tiktok.com/@chickenbaaalls?_r=1&amp;_t=ZS-99azTxGoOzU" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          </ul>
+        </div>
+        <form class="panel form" id="contactForm">
+          <h2>Send a message</h2>
+          <label class="form__field">Name<input class="form__input" name="name" required autocomplete="name"></label>
+          <label class="form__field">Email<input class="form__input" name="email" type="email" required autocomplete="email"></label>
+          <label class="form__field">Message<textarea class="form__input" name="msg" rows="4" required></textarea></label>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="help" class="page" aria-labelledby="help-h">
+      <video class="page__media page__media--video" id="helpVideo" autoplay muted loop playsinline aria-hidden="true"><source src="help.mp4" type="video/mp4"></video>
+      <div class="page__veil"></div>
+      <h1 class="page__title" id="help-h">Customer service</h1>
+      <div class="cols">
+        <div class="panel">
+          <h2>Frequently asked questions</h2>
+          <details class="faq"><summary class="faq__q">How do I order?</summary><p class="faq__a">Add candles to your cart, press Checkout, then fill in your details. We confirm every order by message.</p></details>
+          <details class="faq"><summary class="faq__q">Can I pick up or walk in?</summary><p class="faq__a">Yes. Visit 281 Lower Cabinet Hill any day from 10 am to 5 pm.</p></details>
+          <details class="faq"><summary class="faq__q">How do I care for my candle?</summary><p class="faq__a">Trim the wick to about 5 mm, burn 2 to 4 hours at a time, keep away from drafts and never leave a flame unattended.</p></details>
+          <details class="faq"><summary class="faq__q">I am sensitive to scents. What do you suggest?</summary><p class="faq__a">Try our Unscented range: Glass, Pillar and Tealight candles.</p></details>
+          <details class="faq"><summary class="faq__q">What if my order arrives damaged?</summary><p class="faq__a">Message us on Instagram, Facebook or TikTok with a photo and we will make it right.</p></details>
+        </div>
+        <aside class="panel"><h2>Need a hand?</h2><p>Our team is happy to help by message or in person, 10 am to 5 pm.</p><p><a class="link" href="#contact">Go to Contact</a></p></aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div><h2 class="footer__title">Wickd</h2><p>Hand-poured candles for everyone who loves to relax.</p></div>
+      <div><h2 class="footer__title">Visit</h2><p>281 Lower Cabinet Hill<br>10 am to 5 pm, walk-ins welcome</p></div>
+      <div><h2 class="footer__title">Follow</h2><p><a class="footer__link" href="https://www.instagram.com/sh4yyynx?stkn=cHJ2Zno1bHk5NWRi&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a> · <a class="footer__link" href="https://www.facebook.com/share/1bYSkGaWh2/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a> · <a class="footer__link" href="https://www.tiktok.com/@chickenbaaalls?_r=1&amp;_t=ZS-99azTxGoOzU" target="_blank" rel="noopener noreferrer">TikTok</a></p></div>
+    </div>
+    <p class="footer__copy">© 2026 Wickd Candles. All rights reserved.</p>
+  </footer>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const PRICE = { scented: 299, dessert: 349, melts: 149, unscented: 199 };
+    const CATEGORIES = {
+      scented: { label: 'Scented Candle', items: [
+        { name: 'Lavender', img: 'lavender.jpg', desc: 'Soothing lavender with a soft floral finish. A calm scent for slow evenings.' },
+        { name: 'Bamboo', img: 'BAMBOO.jpg', desc: 'Clean bamboo and green tea for a calm, fresh room.' },
+        { name: 'Cherry Blossom', img: 'cherry.jpg', desc: 'Light cherry blossom with a hint of fresh petals.' },
+        { name: 'Vanilla', img: 'vanilla.jpg', desc: 'Warm vanilla bean with a creamy, golden glow.' }] },
+      dessert: { label: 'Dessert Style Candle', items: [
+        { name: 'Berry', img: 'berry.jpg', desc: 'Sweet mixed berries, bright and juicy.' },
+        { name: 'Matcha', img: 'matcha.jpg', desc: 'Earthy matcha with a smooth, creamy finish.' },
+        { name: 'Tiramisu', img: 'tiramisu.jpg', desc: 'Coffee, cocoa and mascarpone cream, like dessert.' }] },
+      melts: { label: 'Wax Melts', items: [
+        { name: 'Pink Hearts', img: 'melt-1.jpg', desc: 'Hand-made soy wax melts in soft pink hearts. No wick, no flame.' },
+        { name: 'Cream Stars', img: 'melt-2.jpg', desc: 'Creamy white star-shaped melts, hand-poured in small batches.' },
+        { name: 'Lavender Flowers', img: 'melt-3.jpg', desc: 'Purple flower melts for a calm, floral room.' },
+        { name: 'Lemon Flowers', img: 'melt-4.jpg', desc: 'Sunny yellow flower melts with a fresh citrus feel.' },
+        { name: 'Cotton Clouds', img: 'melt-5.jpg', desc: 'Light blue cloud melts for a clean, airy scent.' },
+        { name: 'Pink Butterflies', img: 'melt-6.jpg', desc: 'Delicate pink butterfly melts, a favorite for gifts.' },
+        { name: 'Green Leaves', img: 'melt-7.jpg', desc: 'Leaf-shaped melts in fresh green.' },
+        { name: 'Orange Hearts', img: 'melt-8.jpg', desc: 'Warm orange hearts with a bright, sweet feel.' },
+        { name: 'White Shells', img: 'melt-9.jpg', desc: 'Seashell melts in pearly white.' }] },
+      unscented: { label: 'Unscented', items: [
+        { name: 'Glass Jar', img: 'glass.jpg', desc: 'A clean, fragrance-free candle in a glass jar. Gentle for sensitive noses.' },
+        { name: 'Pillar', img: 'pillar.jpg', desc: 'A classic unscented pillar candle with a steady, quiet glow.' },
+        { name: 'Tealight', img: 'tealight.jpg', desc: 'Small, simple unscented tealights for any mood.' }] }
+    };
+
+    const $ = id => document.getElementById(id);
+    const pages = document.querySelectorAll('.page');
+    const links = document.querySelectorAll('.nav__link');
+    const media = { home: 'homeVideo', contact: 'contactVideo', help: 'helpVideo' };
+
+    function showPage() {
+      const id = (location.hash || '#home').slice(1);
+      const target = $(id) && $(id).classList.contains('page') ? id : 'home';
+      pages.forEach(p => p.classList.toggle('page--active', p.id === target));
+      links.forEach(a => {
+        const on = a.dataset.page === target;
+        a.classList.toggle('nav__link--active', on);
+        on ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current');
+      });
+      for (const k in media) { const v = $(media[k]); if (v) (k === target ? v.play().catch(() => {}) : v.pause()); }
+      $('nav').classList.remove('nav--open'); $('menuBtn').setAttribute('aria-expanded', 'false');
+      window.scrollTo(0, 0);
+    }
+    window.addEventListener('hashchange', showPage);
+    $('menuBtn').addEventListener('click', () => {
+      const open = $('nav').classList.toggle('nav--open');
+      $('menuBtn').setAttribute('aria-expanded', open);
+    });
+
+    let catKey = 'scented', order = [];
+    const saved = new Set();
+    const money = n => '\u20B1' + n.toLocaleString();
+
+    // fade out, swap the product, fade back in
+    let fadeTimer;
+    function fade(change) {
+      const els = [$('heroText'), $('mainImg'), $('prodBg')];
+      els.forEach(e => e.classList.add('is-fading'));
+      clearTimeout(fadeTimer);
+      fadeTimer = setTimeout(() => { change(); requestAnimationFrame(() => els.forEach(e => e.classList.remove('is-fading'))); }, 300);
+    }
+    function render() {
+      const cat = CATEGORIES[catKey], item = cat.items[order[0]];
+      $('eyebrow').textContent = cat.label;
+      $('title').textContent = item.name;
+      $('desc').textContent = item.desc;
+      $('price').textContent = money(PRICE[catKey]);
+      $('mainImg').src = item.img; $('mainImg').alt = item.name + ' ' + cat.label.toLowerCase();
+      $('prodBg').src = item.img;
+      const on = saved.has(item.name);
+      $('save').setAttribute('aria-pressed', on);
+      const thumbs = $('thumbs'); thumbs.innerHTML = '';
+      order.slice(1, 4).forEach(idx => {
+        const it = cat.items[idx], b = document.createElement('button');
+        b.className = 'thumb'; b.setAttribute('aria-label', 'Show ' + it.name);
+        b.innerHTML = '<img class="thumb__img" src="' + it.img + '" alt=""><span class="thumb__cap">' + it.name + '</span>';
+        b.addEventListener('click', () => { const p = order.indexOf(idx); fade(() => { order = order.slice(p).concat(order.slice(0, p)); render(); }); });
+        thumbs.appendChild(b);
+      });
+    }
+    function showCategory(key, first) {
+      catKey = key;
+      order = [...Array(CATEGORIES[key].items.length).keys()];
+      if (first) order = order.slice(first).concat(order.slice(0, first));
+      document.querySelectorAll('.cats__btn').forEach(b => {
+        const on = b.dataset.cat === key;
+        b.classList.toggle('cats__btn--active', on); b.setAttribute('aria-pressed', on);
+      });
+      render();
+    }
+    for (const k in CATEGORIES) {
+      const b = document.createElement('button');
+      b.className = 'cats__btn'; b.dataset.cat = k; b.textContent = CATEGORIES[k].label;
+      b.addEventListener('click', () => fade(() => showCategory(k)));
+      $('cats').appendChild(b);
+    }
+    $('add-btn').addEventListener('click', () => {
+      const item = CATEGORIES[catKey].items[order[0]];
+      addToCart({ name: item.name, img: item.img, price: PRICE[catKey] });
+      toast(item.name + ' added to cart');
+    });
+    $('save').addEventListener('click', () => {
+      const n = CATEGORIES[catKey].items[order[0]].name;
+      saved.has(n) ? saved.delete(n) : saved.add(n); render();
+    });
+
+    // SEARCH: matches name, category and description; best match wins (exact > starts with > word > contains)
+    $('searchForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const q = $('search').value.trim().toLowerCase();
+      if (!q) return;
+      let best = null;
+      for (const key in CATEGORIES) CATEGORIES[key].items.forEach((it, i) => {
+        const n = it.name.toLowerCase(), c = CATEGORIES[key].label.toLowerCase(), d = it.desc.toLowerCase();
+        const s = n === q ? 100 : n.startsWith(q) ? 80 : n.split(' ').some(w => w.startsWith(q)) ? 70 : n.includes(q) ? 60
+          : c.includes(q) ? 40 : d.includes(q) ? 20 : 0;
+        if (s && (!best || s > best.s)) best = { s, key, i };
+      });
+      if (best) { location.hash = '#products'; showCategory(best.key, best.i); }
+      else toast('No candle found for "' + $('search').value.trim() + '"');
+    });
+
+    // CART
+    let cart = [];
+    try { cart = JSON.parse(localStorage.getItem('wickdCart')) || []; } catch (e) {}
+    const saveCart = () => { try { localStorage.setItem('wickdCart', JSON.stringify(cart)); } catch (e) {} };
+    function addToCart(item) {
+      const f = cart.find(c => c.name === item.name);
+      f ? f.qty++ : cart.push({ ...item, qty: 1 });
+      saveCart(); renderCart();
+    }
+    function changeQty(name, d) {
+      const c = cart.find(x => x.name === name); if (!c) return;
+      c.qty += d; if (c.qty <= 0) cart = cart.filter(x => x !== c);
+      saveCart(); renderCart();
+    }
+    function renderCart() {
+      const count = cart.reduce((s, c) => s + c.qty, 0);
+      $('cart-count').textContent = count; $('cart-count').classList.toggle('nav__badge--has', count > 0);
+      const body = $('cart-body');
+      if (!cart.length) {
+        body.innerHTML = '<p>Your cart is empty. Pick a candle from <a class="link" href="#products">Products</a>.</p>';
+        $('detailsForm').hidden = true; return;
+      }
+      body.innerHTML = '';
+      cart.forEach(c => {
+        const row = document.createElement('div'); row.className = 'cart-row';
+        row.innerHTML = '<img class="cart-row__img" src="' + c.img + '" alt=""><div class="cart-row__name"><strong>' + c.name + '</strong><span>' + money(c.price) + ' each</span></div>' +
+          '<div class="cart-row__qty"><button class="cart-row__btn" aria-label="Less ' + c.name + '">\u2212</button><b>' + c.qty + '</b><button class="cart-row__btn" aria-label="More ' + c.name + '">+</button></div><strong>' + money(c.price * c.qty) + '</strong>';
+        const [less, more] = row.querySelectorAll('.cart-row__btn');
+        less.addEventListener('click', () => changeQty(c.name, -1));
+        more.addEventListener('click', () => changeQty(c.name, 1));
+        body.appendChild(row);
+      });
+      const foot = document.createElement('div'); foot.className = 'cart-foot';
+      foot.innerHTML = '<span>Total <strong>' + money(cart.reduce((s, c) => s + c.price * c.qty, 0)) + '</strong></span><button class="btn" id="checkout">Checkout</button>';
+      foot.querySelector('#checkout').addEventListener('click', () => {
+        $('detailsForm').hidden = false; $('detailsOk').hidden = true;
+        $('detailsForm').querySelector('input').focus();
+      });
+      body.appendChild(foot);
+    }
+    $('detailsForm').addEventListener('submit', e => {
+      e.preventDefault();
+      e.target.hidden = true; $('detailsOk').hidden = false; e.target.reset();
+      cart = []; saveCart(); renderCart();
+      toast('Details submitted. Thank you!');
+    });
+    $('contactForm').addEventListener('submit', e => {
+      e.preventDefault(); e.target.reset(); toast('Message sent. We will reply soon!');
+    });
+
+    let tt;
+    function toast(m) {
+      const t = $('toast'); t.textContent = m; t.classList.add('toast--on');
+      clearTimeout(tt); tt = setTimeout(() => t.classList.remove('toast--on'), 2600);
+    }
+    renderCart(); showCategory('scented'); showPage();
+  </script>
+</body>
+</html>
